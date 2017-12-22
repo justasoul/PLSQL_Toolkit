@@ -2,7 +2,7 @@
 
 ## Run a profiling run 
   
-```plsql
+```PLSQL
 DECLARE
 -- l_result  BINARY_INTEGER;
 
