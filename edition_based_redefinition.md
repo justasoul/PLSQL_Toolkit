@@ -4,7 +4,7 @@
  * [Oracle-Base](http://oracle-base.com/articles/11g/edition-based-redefinition-11gr2.php)
  * 
   
-## Enable functionality to a schema 
+## Enable Edition-Based Redefinition to a schema 
   
 ```
 -- As SYS, run. CAUTION: Irreversible 
