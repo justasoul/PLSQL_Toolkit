@@ -62,27 +62,7 @@ Select *
  where D.nivel in (1, 2, 3) 
 ```
   
-## Reset profiling data tables 
-  
-```
-begin
-
-  execute immediate 'truncate table dbmshp_parent_child_info';
-
-  -- execute immediate 'truncate table dbmshp_function_info';
-  for i in (Select Rowid row_id, k.* from dbmshp_function_info K ) loop 
-    delete from dbmshp_function_info where rowid = i.row_id;
-  end loop;
-
-  -- execute immediate 'truncate table dbmshp_runs';
-  for i in (Select Rowid row_id, k.* from dbmshp_runs K ) loop 
-    delete from dbmshp_runs where rowid = i.row_id;
-  end loop;
-
-end;
-```
-  
-From Oracle-Base
+**From Oracle-Base**  
   
 ```
 SELECT RPAD(' ', (level-1)*2, ' ') || a.name AS name,
@@ -103,7 +83,7 @@ CONNECT BY a.parentsymid = PRIOR a.symbolid
 START WITH a.parentsymid IS NULL;
 ```
   
-Mine
+**Mine**  
 
   
 ```
@@ -137,3 +117,23 @@ with dataset as (
 Select * 
   from dataset D 
 ```
+  
+## Reset profiling data tables 
+  
+```
+begin
+
+  execute immediate 'truncate table dbmshp_parent_child_info';
+
+  -- execute immediate 'truncate table dbmshp_function_info';
+  for i in (Select Rowid row_id, k.* from dbmshp_function_info K ) loop 
+    delete from dbmshp_function_info where rowid = i.row_id;
+  end loop;
+
+  -- execute immediate 'truncate table dbmshp_runs';
+  for i in (Select Rowid row_id, k.* from dbmshp_runs K ) loop 
+    delete from dbmshp_runs where rowid = i.row_id;
+  end loop;
+
+end;
+```  
