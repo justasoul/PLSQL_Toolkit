@@ -1,14 +1,13 @@
 # UTILS 
 
-
-## Determine row/line checksum  
-  
 ```ruby
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
-  
+
+## Determine row/line checksum  
+
 ```plsql
 Create or replace function bn_get_row_cheksum (pv_table_name varchar2, pv_rowid rowid) return varchar2 is
   pragma autonomous_transaction;
